@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ClimaTrack</h1>
+    </header>
+    <section id="bgcolor">
+        <section id="harsh">
+            <div class="searchbar">
+                <h2>Enter a city name</h2>
+                <input type="text" id="city-input" placeholder="E.g., New Delhi, Mumbai, Goa">
+                <select id="recent-searches" onchange="handleRecentSearchSelection(event)">
+                    <option value="">Select a recent city</option>
+                </select>
+                <button id="search-button">Search</button>
+                <div class="hr-container">
+                    <span class="hr-text">Or</span>
+                </div>
+                <button id="current-location-button">Use Current Location</button>
+            </div>
+            <div id="weather-today">
+                <div id="today-details" hidden>
+                    <!-- Today's weather details will be displayed here -->
+                </div>
+                
+            </div> 
+        </section>
+        <div id="forecast" hidden>
+            <h2 id="forecast-heading">6-Day Forecast</h2>
+            <div id="forecast-details"></div>
+        </div>
+    </section>
+    
+</body>
+</html>
