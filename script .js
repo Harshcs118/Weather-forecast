@@ -159,3 +159,12 @@ function displayExtendedForecast(data) {
 
     forecastContainer.removeAttribute('hidden');
 }
+
+function storeRecentSearch(city) {
+    let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+    if (!recentSearches.includes(city)) {
+        recentSearches.push(city);
+        localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+    }
+    displayRecentSearches();
+}
