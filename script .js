@@ -91,3 +91,20 @@ function displayWeather(data) {
     `;
     document.getElementById('today-details').innerHTML = weatherDetails;
 }
+
+function fetchExtendedForecast(city) {
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.cod === "200") {
+                displayExtendedForecast(data);
+                document.getElementById('forecast').removeAttribute('hidden');
+            } else {
+                alert('City not found.');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching extended forecast data:', error);
+            alert('Error fetching extended forecast data. Please try again later.');
+        });
+}
