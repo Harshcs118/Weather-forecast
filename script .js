@@ -168,3 +168,24 @@ function storeRecentSearch(city) {
     }
     displayRecentSearches();
 }
+
+function displayRecentSearches() {
+    const recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+    const recentSearchesContainer = document.getElementById('recent-searches');
+    recentSearchesContainer.innerHTML = '<option value="">Select a recent city</option>';
+    recentSearches.forEach(city => {
+        const optionElement = document.createElement('option');
+        optionElement.textContent = city;
+        optionElement.value = city;
+        recentSearchesContainer.appendChild(optionElement);
+    });
+}
+
+function handleRecentSearchSelection(event) {
+    const city = event.target.value;
+    if (city) {
+        fetchWeatherByCity(city);
+    }
+}
+
+displayRecentSearches();
