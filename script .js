@@ -108,3 +108,20 @@ function fetchExtendedForecast(city) {
             alert('Error fetching extended forecast data. Please try again later.');
         });
 }
+
+function fetchExtendedForecastByCoordinates(lat, lon) {
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.cod === "200") {
+                displayExtendedForecast(data);
+                document.getElementById('forecast').removeAttribute('hidden');
+            } else {
+                alert('Location not found.');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching extended forecast data:', error);
+            alert('Error fetching extended forecast data. Please try again later.');
+        });
+}
