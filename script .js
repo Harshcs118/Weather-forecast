@@ -34,3 +34,22 @@ function positionSuccess(position) {
 function positionError(error) {
     alert(`Unable to retrieve your location. Error code: ${error.code}, Message: ${error.message}`);
 }
+
+function fetchWeatherByCity(city) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.cod === 200) {
+                displayWeather(data);
+                storeRecentSearch(city);
+                fetchExtendedForecast(city);
+                document.getElementById('today-details').removeAttribute('hidden');
+            } else {
+                alert('City not found.');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching weather data by city:', error);
+            alert('Error fetching weather data. Please try again later.');
+        });
+}
