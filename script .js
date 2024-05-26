@@ -8,3 +8,19 @@ document.getElementById('search-button').addEventListener('click', function() {
         alert('Please enter a city name.');
     }
 });
+
+document.getElementById('current-location-button').addEventListener('click', function() {
+    getCurrentLocation();
+});
+
+function getCurrentLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(positionSuccess, positionError, {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        });
+    } else {
+        alert('Geolocation is not supported by this browser.');
+    }
+}
