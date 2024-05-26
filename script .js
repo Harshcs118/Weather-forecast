@@ -24,3 +24,13 @@ function getCurrentLocation() {
         alert('Geolocation is not supported by this browser.');
     }
 }
+
+function positionSuccess(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    fetchWeatherByCoordinates(lat, lon);
+}
+
+function positionError(error) {
+    alert(`Unable to retrieve your location. Error code: ${error.code}, Message: ${error.message}`);
+}
