@@ -125,3 +125,37 @@ function fetchExtendedForecastByCoordinates(lat, lon) {
             alert('Error fetching extended forecast data. Please try again later.');
         });
 }
+
+function displayExtendedForecast(data) {
+    let forecastHTML = '';
+    const forecastDays = [];
+    
+    // Filter to get 6 days of forecast data
+    const filteredList = data.list.filter(item => {
+        const forecastDate = item.dt_txt.split(' ')[0];
+        if (!forecastDays.includes(forecastDate)) {
+            forecastDays.push(forecastDate);
+            return true;
+        }
+        return false;
+    }).slice(0, 6); // Ensure we only get the first 6 days
+
+    filteredList.forEach(forecast => {
+        const forecastDate = forecast.dt_txt.split(' ')[0];
+        forecastHTML += `
+            <div class="forecast-card">
+                <p>${forecastDate}</p>
+                <p><img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt="${forecast.weather[0].description}"></p>
+                <p>Temp: ${forecast.main.temp}°C</p>
+                <p>Wind: ${forecast.wind.speed} m/s</p>
+                <p>Humidity: ${forecast.main.humidity}%</p>
+            </div>
+        `;
+    });
+
+    const forecastContainer = document.getElementById('forecast');
+    const forecastDetails = document.getElementById('forecast-details');
+    forecastDetails.innerHTML = forecastHTML;
+
+    forecastContainer.removeAttribute('hidden');
+}
