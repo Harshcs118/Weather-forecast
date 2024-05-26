@@ -72,3 +72,22 @@ function fetchWeatherByCoordinates(lat, lon) {
             alert('Error fetching weather data. Please try again later.');
         });
 }
+
+function displayWeather(data) {
+    const cityName = data.name;
+    const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    const weatherDetails = `
+        <h2 class="citydate">${cityName} - ${currentDate}</h2>
+        <div class="weather-icon">
+            <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}">
+            <p>${data.weather[0].description}</p>
+        </div>
+        <div class="weather-info">
+            <p>Temperature: ${data.main.temp}°C</p>
+            <p>Humidity: ${data.main.humidity}%</p>
+            <p>Wind Speed: ${data.wind.speed} m/s</p>
+        </div>
+    `;
+    document.getElementById('today-details').innerHTML = weatherDetails;
+}
