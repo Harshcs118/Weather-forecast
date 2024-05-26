@@ -2,29 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0">
+    <title>Weather Forecast Application</title>
+
+    <!-- linking css stylesheet and javascript file  -->
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
+    <!-- header of the webpage -->
     <header>
         <h1>ClimaTrack</h1>
     </header>
+
+    <!-- section which contain all the input or searched data of the webpage -->
     <section id="bgcolor">
+
+        <!-- section containing the searched bar, button and today's weather forecast -->
         <section id="harsh">
-            <div class="searchbar">
+
+            <!-- this div contain input, dropdown menu, search and user location button -->
+            <div class="searchbar"> 
+
                 <h2>Enter a city name</h2>
+
                 <input type="text" id="city-input" placeholder="E.g., New Delhi, Mumbai, Goa">
+
+                <!-- using select tag for creating dropdown menu -->
                 <select id="recent-searches" onchange="handleRecentSearchSelection(event)">
                     <option value="">Select a recent city</option>
                 </select>
+                           <!-- search button -->
                 <button id="search-button">Search</button>
+
                 <div class="hr-container">
                     <span class="hr-text">Or</span>
                 </div>
+                            <!-- user current location button -->
                 <button id="current-location-button">Use Current Location</button>
+
             </div>
+
+            <!-- this div contain the today's weather-forecast -->
             <div id="weather-today">
                 <div id="today-details" hidden>
                     <!-- Today's weather details will be displayed here -->
@@ -32,10 +51,18 @@
                 
             </div> 
         </section>
+
+        <!-- this div contain the extended days weather forecast     -->
         <div id="forecast" hidden>
             <h2 id="forecast-heading">6-Day Forecast</h2>
             <div id="forecast-details"></div>
         </div>
+
+        <!-- this div conatain a button for opening github repository of this webpage -->
+        <div class="github">
+            <a href="https://github.com/Harshcs118/weather-forecast" target="_blank">Go to GitHub</a>
+        </div>
+
     </section>
     
 </body>

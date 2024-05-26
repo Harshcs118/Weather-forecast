@@ -3,12 +3,14 @@ body {
     width: 100%;
 }
 
+/* styling for the section background */
 #bgcolor{
     background-color: rgb(14, 51, 71);
     padding-bottom: 40px;
     padding-right: 10px;
 }
 
+/* header styling */
 header{
     background-color: rgb(3, 19, 2);
     padding: 1px;
@@ -18,7 +20,7 @@ header{
     color: white;
 }
 
-
+/* conatiner styling */
 .searchbar{
     display: flex;
     flex-direction: column;
@@ -47,6 +49,8 @@ header{
     background-color: rgb(1, 41, 28);
     color: white;
 }
+
+/* styling for hr tag */
 .hr-container {
     display: flex;
     align-items: center;
@@ -73,6 +77,8 @@ header{
     font-weight: bold;
 }
 
+
+/* styling for weather data */
 #weather-details {
     margin-top: 20px;
     background-color: aquamarine;
@@ -100,6 +106,8 @@ header{
     margin-top: 70px;
 }
 
+/* 
+styling for 6 day weather forecast data */
 #harsh{
     display: flex;
 }
@@ -136,6 +144,7 @@ header{
         box-shadow: 0px 0px 20px rgb(0, 0, 0);
 }
 
+/* weather icon styling */
 .weather-icon {
     position: absolute;
     display: flex;
@@ -150,6 +159,28 @@ header{
     height: auto;
     margin-top: -40px;
 }
+
+/* github button styling */
+.github{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.github a{
+    padding: 10px;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.github a:hover{
+    background-color: rgb(180, 0, 0);
+}
+
+
+/* styling for making webpage responsive for all screen */
 
 @media only screen and (min-width: 1025px) and (max-width: 1439px){
     #today-details {
