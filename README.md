@@ -13,7 +13,7 @@ A simple weather forecast webpage that allows users to search for current weathe
 
 ## Setup Instructions
 1. make a repository
-2. added the repository to the vs code by git init, and git remote origin "url"
+2. added the repository to the vs code by git init, git commit and git remote add origin "url"
 3. push all the code to github by git push -u origin main
 
 ## Usage
