@@ -53,3 +53,22 @@ function fetchWeatherByCity(city) {
             alert('Error fetching weather data. Please try again later.');
         });
 }
+
+function fetchWeatherByCoordinates(lat, lon) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.cod === 200) {
+                console.log(`Latitude: ${lat}, Longitude: ${lon}`);
+                displayWeather(data);
+                fetchExtendedForecastByCoordinates(lat, lon);
+                document.getElementById('today-details').removeAttribute('hidden');
+            } else {
+                alert('Location not found.');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching weather data by coordinates:', error);
+            alert('Error fetching weather data. Please try again later.');
+        });
+}
