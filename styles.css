@@ -150,3 +150,155 @@ header{
     height: auto;
     margin-top: -40px;
 }
+
+@media only screen and (min-width: 1025px) and (max-width: 1439px){
+    #today-details {
+        width: 565px;
+        margin-left: 35px;
+    }
+    .weather-icon {
+        margin-left: 440px;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    #today-details {
+        width: 310px;
+        margin-left: 35px;
+    }
+
+    .weather-icon {
+        margin-left: 225px;
+    }
+
+    .weather-icon img {
+        margin-top: -16px;
+    }
+
+    .searchbar {
+        margin-left: 20px;
+    }
+
+    #forecast-details {
+        display: grid;
+        padding: 5px;
+        margin: 15px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 359px){
+    header {
+        font-size: 15px;
+    }
+
+    #bgcolor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #harsh {
+        flex-direction: column;
+        align-items: center;
+    }
+    #recent-searches {
+        width: 225px;
+    }
+
+    #city-input {
+        width: 200px;
+    }
+    .searchbar {
+        width: 260px;
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    #search-button, #current-location-button {
+        margin-right: 0px;
+        width: 225px;
+    }
+    .weather-icon {
+        margin-left: 0px;
+        position: static;
+    }
+    .citydate {
+        margin-top: 15px;
+    }
+    .weather-icon img {
+        margin-top: -15px;
+    }
+
+    #today-details {
+        margin-left: 0px;
+        width: 220px;
+    }
+
+    #forecast-details {
+        background-color: rgb(76, 162, 106);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 20px;
+        margin: 10px;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 767px){
+    header {
+        font-size: 15px;
+    }
+
+    #bgcolor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #harsh {
+        flex-direction: column;
+        align-items: center;
+    }
+    #recent-searches {
+        width: 225px;
+    }
+
+    #city-input {
+        width: 200px;
+    }
+    .searchbar {
+        width: 260px;
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    #search-button, #current-location-button {
+        margin-right: 0px;
+        width: 225px;
+    }
+    .weather-icon {
+        margin-left: 0px;
+        position: static;
+    }
+    .citydate {
+        margin-top: 15px;
+    }
+    .weather-icon img {
+        margin-top: -15px;
+    }
+
+    #today-details {
+        margin-left: 0px;
+        width: 220px;
+    }
+
+    #forecast-details {
+        background-color: rgb(76, 162, 106);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 20px;
+        margin: 10px;
+    }
+}
